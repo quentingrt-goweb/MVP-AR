@@ -23,30 +23,17 @@
         <MyModelViewer />
       </div>
       
-      <!-- Composant de test pour diagnostic -->
-      <div class="test-section">
-        <TestViewer />
-      </div>
-      
-      <!-- Test simple -->
-      <div class="test-section">
-        <SimpleTest />
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import MyModelViewer from '@/components/MyModelViewer.vue'
-import TestViewer from '@/components/TestViewer.vue'
-import SimpleTest from '@/components/SimpleTest.vue'
 
 export default {
   name: 'HomePage',
   components: {
-    MyModelViewer,
-    TestViewer,
-    SimpleTest
+    MyModelViewer
   }
 }
 </script>
