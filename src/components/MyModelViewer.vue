@@ -9,11 +9,13 @@
       ar
       ar-modes="scene-viewer quick-look webxr"
       ar-scale="auto"
+      scale="0.5 0.5 0.5"
       style="width: 400px; height: 400px; background: #f0f0f0; border: 2px solid #ccc;"
     ></model-viewer>
     <p style="margin-top:1em; color:#888; font-size:0.95em;">
       Sur mobile, un bouton AR apparaîtra si votre appareil est compatible.<br>
-      Pour iOS, ajoutez un fichier .usdz pour une expérience optimale.
+      Pour iOS, ajoutez un fichier .usdz pour une expérience optimale.<br>
+      <b>Astuce :</b> L'attribut <code>scale="0.5 0.5 0.5"</code> réduit la taille du modèle en AR (WebXR uniquement).
     </p>
   </div>
 </template>
