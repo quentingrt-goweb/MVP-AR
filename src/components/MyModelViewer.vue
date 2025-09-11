@@ -12,9 +12,16 @@
         ar-scale="auto"
         scale="0.05 0.05 0.05"
         camera-orbit="15deg 75deg 200%"
+        field-of-view="30deg"
+        min-camera-orbit="auto auto 50%"
+        max-camera-orbit="auto auto 500%"
+        camera-target="0m 0m 0m"
+        interaction-policy="always-allow"
         style="width: 100%; height: 400px; background: #f8f9fa; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); --model-transform: rotateX(90deg);"
         shadow-intensity="1"
         exposure="1"
+        tone-mapping="neutral"
+        environment-image="neutral"
       ></model-viewer>
       <div class="ar-instructions">
         <span class="ar-badge">Nouveau&nbsp;!</span>
@@ -29,7 +36,7 @@
           <li>AR : bouton <b>AR</b> (mobile compatible)</li>
         </ul>
         <div class="ar-note">
-          <b>Astuce :</b> L'attribut <code>scale</code> contrôle la taille du modèle (ex: "0.5 0.5 0.5" pour réduire de moitié).<br>
+          <b>Astuce :</b> Contrôles avancés avec <code>field-of-view</code> pour la profondeur et limites de zoom configurables.<br>
           Pour iOS, ajoutez un fichier .usdz pour une expérience optimale.
         </div>
       </div>
