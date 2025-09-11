@@ -57,6 +57,10 @@ export default {
   margin-bottom: 24px;
   letter-spacing: 0.5px;
 }
+model-viewer {
+  width: 400px;
+  height: 400px;
+}
 .ar-card {
   background: #fff;
   border-radius: 20px;
