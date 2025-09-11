@@ -9,8 +9,8 @@
         auto-rotate
         ar
         ar-modes="scene-viewer quick-look webxr"
-        ar-scale="auto"
-        scale="0.05 0.05 0.05"
+        ar-scale="fixed"
+        scale="0.01 0.01 0.01"
         camera-orbit="15deg 75deg 200%"
         field-of-view="30deg"
         min-camera-orbit="auto auto 50%"
