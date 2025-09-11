@@ -3,15 +3,16 @@
     <h2 class="ar-title">Visualisation 3D & Réalité Augmentée</h2>
     <div class="ar-card">
       <model-viewer
-        src="/models/MR_Model.glb"
-        alt="Locker MR"
+        src="/models/Armoire_MR.glb"
+        alt="Armoire 3D"
         camera-controls
         auto-rotate
         ar
         ar-modes="scene-viewer quick-look webxr"
         ar-scale="auto"
-        scale="0.5 0.5 0.5"
-        style="width: 100%; height: 400px; background: #f8f9fa; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.08);"
+        scale="0.1 0.1 0.1"
+        camera-orbit="15deg 75deg 150%"
+        style="width: 100%; height: 400px; background: #f8f9fa; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); --model-transform: rotateX(90deg);"
         shadow-intensity="1"
         exposure="1"
       ></model-viewer>
@@ -20,7 +21,7 @@
         <p>
           <strong>Manipulez le modèle 3D</strong> : faites pivoter, zoomez, explorez.<br>
           <strong>Essayez la Réalité Augmentée</strong> :
-          <span class="ar-mobile">Sur mobile, appuyez sur le bouton <b>AR</b> pour placer le locker dans votre environnement réel.</span>
+          <span class="ar-mobile">Sur mobile, appuyez sur le bouton <b>AR</b> pour placer l'armoire dans votre environnement réel.</span>
         </p>
         <ul class="ar-tips">
           <li>Rotation : glisser/déposer</li>
