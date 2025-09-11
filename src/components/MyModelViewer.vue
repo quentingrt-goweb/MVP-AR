@@ -10,7 +10,7 @@
         ar
         ar-modes="scene-viewer quick-look webxr"
         ar-scale="auto"
-        scale="0.1 0.1 0.1"
+        scale="1.0 1.0 1.0"
         camera-orbit="15deg 75deg 150%"
         style="width: 100%; height: 400px; background: #f8f9fa; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); --model-transform: rotateX(90deg);"
         shadow-intensity="1"
@@ -29,7 +29,7 @@
           <li>AR : bouton <b>AR</b> (mobile compatible)</li>
         </ul>
         <div class="ar-note">
-          <b>Astuce :</b> L'attribut <code>scale="0.5 0.5 0.5"</code> réduit la taille du modèle en AR (WebXR).<br>
+          <b>Astuce :</b> L'attribut <code>scale</code> contrôle la taille du modèle (ex: "0.5 0.5 0.5" pour réduire de moitié).<br>
           Pour iOS, ajoutez un fichier .usdz pour une expérience optimale.
         </div>
       </div>
