@@ -3,14 +3,14 @@
     <h2 class="ar-title">Visualisation 3D & Réalité Augmentée</h2>
     <div class="ar-card">
       <model-viewer
-        src="/models/Armoire_MR.glb"
+        src="/models/Armoire_MR-red-v2.glb"
         alt="Armoire 3D"
         camera-controls
         auto-rotate
         ar
         ar-modes="scene-viewer quick-look webxr"
         ar-scale="auto"
-        scale="1.0 1.0 1.0"
+        scale="0.001 0.001 0.001"
         camera-orbit="15deg 75deg 150%"
         style="width: 100%; height: 400px; background: #f8f9fa; border-radius: 16px; box-shadow: 0 2px 16px rgba(0,0,0,0.08); --model-transform: rotateX(90deg);"
         shadow-intensity="1"
