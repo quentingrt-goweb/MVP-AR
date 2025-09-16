@@ -3,7 +3,7 @@
     <h2 class="ar-title">Visualisation 3D & Réalité Augmentée</h2>
     <div class="ar-card">
       <model-viewer
-        src="/models/Armoire_MR-red-v2.glb"
+        src="/models/Armoire_MR_test_v3.glb"
         alt="Armoire 3D"
         camera-controls
         auto-rotate
