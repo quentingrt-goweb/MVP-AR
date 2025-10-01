@@ -9,8 +9,8 @@
         auto-rotate
         ar
         ar-modes="scene-viewer quick-look webxr"
-        ar-scale="fixed"
-        scale="0.01 0.01 0.01"
+        ar-scale="auto"
+        scale="2 2 2"
         camera-orbit="15deg 75deg 200%"
         field-of-view="30deg"
         min-camera-orbit="auto auto 50%"
@@ -46,7 +46,30 @@
 
 <script>
 export default {
-  name: 'MyModelViewer'
+  name: 'MyModelViewer',
+  mounted() {
+    this.optimizeForIOS();
+  },
+  methods: {
+    optimizeForIOS() {
+      // Détection iOS
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                   (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      
+      if (isIOS) {
+        // Ajustement spécifique pour iOS
+        const modelViewer = this.$el.querySelector('model-viewer');
+        if (modelViewer) {
+          // Force le rechargement du modèle avec les nouveaux paramètres
+          modelViewer.addEventListener('load', () => {
+            // Ajustement de la taille pour iOS
+            modelViewer.style.transform = 'scale(1.2)';
+            modelViewer.style.webkitTransform = 'scale(1.2)';
+          });
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -67,6 +90,11 @@ export default {
 model-viewer {
   width: 400px;
   height: 400px;
+  /* Optimisations spécifiques iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .ar-card {
   background: #fff;
@@ -122,6 +150,18 @@ model-viewer {
   color: #888;
   margin-top: 8px;
 }
+/* Styles spécifiques pour iOS */
+@supports (-webkit-touch-callout: none) {
+  model-viewer {
+    /* Force l'accélération matérielle sur iOS */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* Améliore le rendu 3D sur iOS */
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+}
+
 @media (max-width: 600px) {
   .ar-card {
     padding: 16px 4px 12px 4px;
@@ -129,6 +169,43 @@ model-viewer {
   }
   .ar-title {
     font-size: 1.3rem;
+  }
+  
+  /* Optimisations mobiles pour iOS */
+  model-viewer {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    /* Améliore l'affichage sur petits écrans iOS */
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+/* Media query spécifique pour iPhone */
+@media only screen 
+  and (device-width: 375px) 
+  and (device-height: 667px) 
+  and (-webkit-device-pixel-ratio: 2) {
+  model-viewer {
+    width: 100%;
+    height: 450px;
+    /* Compensation spécifique pour iPhone 6/7/8 */
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+
+@media only screen 
+  and (device-width: 414px) 
+  and (device-height: 896px) 
+  and (-webkit-device-pixel-ratio: 2) {
+  model-viewer {
+    width: 100%;
+    height: 450px;
+    /* Compensation spécifique pour iPhone 11 */
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
   }
 }
 </style> 
